@@ -1,0 +1,13 @@
+{
+  "name": "multi-semantic-release",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:darksworm/multi-semantic-release.git",
+  "author": "darksworm <9987548+darksworm@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "multi-semantic-release": "^2.13.0",
+    "request-promise": "^4.2.6"
+  }
+}

@@ -1,0 +1,21 @@
+name: Multi Semantic Release
+description: Action that handles multi package semantic release from one repo (monorepo)
+
+runs:
+  using: node16
+  main: main.js
+
+inputs:
+  github-token:
+    description: token to use to do the release
+    required: true
+  dry-run:
+    description: whether to do a dry run
+    required: false
+    default: "false"
+
+outputs:
+  released-something:
+    description: whether any packages were released (boolean)
+  new-versions:
+    description: list of projects and their new versions that will be (if dry-run) or were released
