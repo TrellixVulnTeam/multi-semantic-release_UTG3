@@ -39,7 +39,12 @@ async function run() {
         {dryRun: isDryRun, deps: {}}
     )
 
-    const released = packages.filter((pkg) => pkg.result !== false)
+    const releasedByName = {}
+    packages.forEach((p) => {
+        releasedByName[p.dir.split('/').pop()] = false
+    })
+
+    const newVersions = packages.filter((pkg) => pkg.result !== false)
         .map((pkg) => {
             return {
                 name: pkg.dir.split('/').pop(),
@@ -47,8 +52,13 @@ async function run() {
             }
         })
 
-    core.setOutput('released-something', released.length > 0)
-    core.setOutput('new-versions', released)
+    newVersions.forEach((v) => {
+        releasedByName[v.name] = true
+    })
+
+    core.setOutput('new-versions', newVersions)
+    core.setOutput('something-was-released', newVersions.length > 0)
+    core.setOutput('package-was-released', releasedByName)
 }
 
 run()

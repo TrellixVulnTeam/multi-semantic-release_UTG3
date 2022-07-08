@@ -19,7 +19,9 @@ inputs:
     default: "false"
 
 outputs:
-  released-something:
+  something-was-released:
     description: whether any packages were released (boolean)
   new-versions:
     description: list of projects and their new versions that will be (if dry-run) or were released
+  package-was-released:
+    description: JSON object containing boolean value for each package (whether it was released) keyed by package name
