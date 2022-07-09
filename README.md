@@ -3,7 +3,7 @@
 This action runs [multi-semantic-release](https://github.com/dhoulb/multi-semantic-release) in your repository.
 
 ## Limitations
-For now, this action only supports [packages which are defined in the workspaces section in package.json](https://github.com/dhoulb/multi-semantic-release).
+For now, this action only supports [packages which are defined in the workspaces section in package.json](https://github.com/dhoulb/multi-semantic-release#yarn--npm-v7).
 
 ## Usage
 ```
